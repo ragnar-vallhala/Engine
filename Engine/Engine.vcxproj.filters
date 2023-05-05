@@ -31,7 +31,7 @@
     <None Include="src\Shaders\frag2.glsl" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="src\shader.h">
+    <ClInclude Include="include\shader.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
