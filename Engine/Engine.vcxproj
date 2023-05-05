@@ -156,11 +156,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\Dependecies\glad\src\glad.c" />
+    <ClCompile Include="src\shader.cpp" />
     <ClCompile Include="src\Application.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="src\Shaders\frag.glsl" />
+    <None Include="src\Shaders\frag2.glsl" />
     <None Include="src\Shaders\vertex.glsl" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="src\shader.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

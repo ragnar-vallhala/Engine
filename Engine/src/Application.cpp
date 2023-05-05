@@ -3,6 +3,7 @@
 #include <iostream>
 #include <time.h>
 #include <fstream>
+#include "shader.h"
 
 
 #if 1
@@ -53,7 +54,9 @@ void shaderInit(const char* vs,  const char* fs) {
     std::string str1 = "";
     loadFile(fs, str1);
     fragmentShaderSource = str1.c_str();
-   
+    LOG(vertexShaderSource);
+    LOG(fragmentShaderSource);
+    
 }
 
 
@@ -90,44 +93,46 @@ int main()
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
     
    
-    float vertices[] = {
-      0.5f,  0.5f, 0.0f,  // top right
-      0.5f, -0.5f, 0.0f,  // bottom right
-     -0.5f, -0.5f, 0.0f,  // bottom left
-     -0.5f,  0.5f, 0.0f   // top left 
+    float vertices1[] = {
+        -0.5,0.5,0,
+        -1,-0.5,0,
+        0,-0.5,0
+    };
+    float vertices2[]={
+        0,-0.5,0,
+        0.5,0.5,0,
+        1,-0.5,0
     };
     unsigned int indices[] = {  // note that we start from 0!
-        0, 1, 3,   // first triangle
-        1, 2, 3    // second triangle
+        0, 1, 2,   // first triangle
+        2, 3, 4  // second triangle
     };
 
-    unsigned int VBO, VAO, EBO;
-    glGenVertexArrays(1, &VAO);
-    glGenBuffers(1, &VBO);
-    glGenBuffers(1, &EBO);
-    // bind the Vertex Array Object first, then bind and set vertex buffer(s), and then configure vertex attributes(s).
-    glBindVertexArray(VAO);
+    unsigned int VAOs[2], VBOs[2];
+    glGenVertexArrays(2, VAOs);
+    glGenBuffers(2, VBOs);
+    glBindVertexArray(VAOs[0]);
+    glBindBuffer(GL_ARRAY_BUFFER, VBOs[0]);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices1), vertices1, GL_STATIC_DRAW);
 
-    glBindBuffer(GL_ARRAY_BUFFER, VBO);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
 
-    // note that this is allowed, the call to glVertexAttribPointer registered VBO as the vertex attribute's bound vertex buffer object so afterwards we can safely unbind
-    glBindBuffer(GL_ARRAY_BUFFER, 0);
-
-    // remember: do NOT unbind the EBO while a VAO is active as the bound element buffer object IS stored in the VAO; keep the EBO bound.
-    //glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, 0);
-
-    // You can unbind the VAO afterwards so other VAO calls won't accidentally modify this VAO, but this rarely happens. Modifying other
-    // VAOs requires a call to glBindVertexArray anyways so we generally don't unbind VAOs (nor VBOs) when it's not directly necessary.
-    glBindVertexArray(0);
 
 
+
+    
+    glBindVertexArray(VAOs[1]);
+    glBindBuffer(GL_ARRAY_BUFFER, VBOs[1]);
+    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices2), vertices2, GL_STATIC_DRAW);
+
+   
+
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+    glEnableVertexAttribArray(0);
+
+    
 
     //Creasting a vertex shader
     unsigned int vertexShader;
@@ -152,6 +157,7 @@ int main()
     fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
     glShaderSource(fragmentShader, 1, &fragmentShaderSource, NULL);
     glCompileShader(fragmentShader);
+    glGetShaderiv(fragmentShader, GL_COMPILE_STATUS, &success);
     //in case the fragment dhader compilation fails
     if (!success)
     {
@@ -179,7 +185,45 @@ int main()
     glDeleteShader(vertexShader);
     glDeleteShader(fragmentShader);
 
+    shaderInit("../Engine/src/Shaders/vertex.glsl", "../Engine/src/Shaders/frag2.glsl");
 
+    vertexShader = glCreateShader(GL_VERTEX_SHADER);
+    glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
+    glCompileShader(vertexShader);
+    glGetShaderiv(vertexShader, GL_COMPILE_STATUS, &success);
+    if (!success) {
+        glGetShaderInfoLog(vertexShader, 512, NULL, infoLog);
+        LOG("ERROR::VERTEXSHADER::2::COMPILATION FAILED");
+        LOG(infoLog);
+    }
+
+    fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
+    glShaderSource(fragmentShader, 1, &fragmentShaderSource, NULL);
+    glCompileShader(fragmentShader);
+    glGetShaderiv(fragmentShader, GL_COMPILE_STATUS, &success);
+    if (!success) {
+        glGetShaderInfoLog(fragmentShader, 512, NULL, infoLog);
+        LOG("ERROR::FRAGMENT SHADER2 COMPILATION FAILED");
+        LOG(infoLog);
+    }
+
+   
+
+    unsigned int shaderProgram1;
+    shaderProgram1 = glCreateProgram();
+    glAttachShader(shaderProgram1, vertexShader);
+    glAttachShader(shaderProgram1, fragmentShader);
+    glLinkProgram(shaderProgram1);
+
+    glGetProgramiv(shaderProgram1, GL_LINK_STATUS, &success);
+    if (!success) {
+        glGetProgramInfoLog(shaderProgram1, 512, NULL, infoLog);
+        LOG("ERROR::LINKING PROGRAM1 FAILED");
+        LOG(infoLog);
+    }
+
+    glDeleteShader(vertexShader);
+    glDeleteShader(fragmentShader);
 
     //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
     while (!glfwWindowShouldClose(window))
@@ -191,8 +235,11 @@ int main()
 
 
         glUseProgram(shaderProgram);
-        glBindVertexArray(VAO);
-        glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+        glBindVertexArray(VAOs[0]);
+        glDrawArrays(GL_TRIANGLES, 0, 3);
+        glUseProgram(shaderProgram1);
+        glBindVertexArray(VAOs[1]);
+        glDrawArrays(GL_TRIANGLES, 0, 3);
         
         glfwSwapBuffers(window);
         glfwPollEvents();
@@ -201,9 +248,8 @@ int main()
         
     }
 
-    glDeleteVertexArrays(1, &VAO);
-    glDeleteBuffers(1, &VBO);
-    glDeleteBuffers(1, &EBO);
+    glDeleteVertexArrays(2, VAOs);
+    glDeleteBuffers(2, VBOs);
     glDeleteProgram(shaderProgram);
 
     glfwTerminate();
