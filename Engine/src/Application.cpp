@@ -207,8 +207,6 @@ int main()
         LOG(infoLog);
     }
 
-   
-
     unsigned int shaderProgram1;
     shaderProgram1 = glCreateProgram();
     glAttachShader(shaderProgram1, vertexShader);
