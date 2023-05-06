@@ -6,8 +6,11 @@
 #include "shader.h"
 
 
-#if 1
+#if 0
+#define SHADER_LOG
+//#define COLOR_OUT
 #define LOG(x) std::cout<<x<<std::endl;
+#define LOGL(x) std::cout<<x;
 #else
 #define LOG(x)
 #endif
@@ -54,9 +57,12 @@ void shaderInit(const char* vs,  const char* fs) {
     std::string str1 = "";
     loadFile(fs, str1);
     fragmentShaderSource = str1.c_str();
+#ifdef SHADER_LOG
     LOG(vertexShaderSource);
+    LOG("---------------------------------------------------------------------------------");
     LOG(fragmentShaderSource);
-    
+    LOG("---------------------------------------------------------------------------------");
+#endif
 }
 
 
@@ -95,13 +101,14 @@ int main()
    
     float vertices1[] = {
         -0.5,0.5,0,
-        -1,-0.5,0,
+        -1.0,-0.5,0,
         0,-0.5,0
     };
     float vertices2[]={
-        0,-0.5,0,
-        0.5,0.5,0,
-        1,-0.5,0
+            // positions         // colors
+          0.5f, 0.5f, 0.0f,  0.5f, 0.0f, 0.0f,   // bottom right
+         1.0, -0.5f, 0.0f,  0.0f, 0.5f, 0.0f,   // bottom left
+          0.0f,  -0.5f, 0.0f,  0.0f, 0.0f, 0.5f    // top 
     };
     unsigned int indices[] = {  // note that we start from 0!
         0, 1, 2,   // first triangle
@@ -118,7 +125,7 @@ int main()
 
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
-
+    
 
 
 
@@ -129,8 +136,11 @@ int main()
 
    
 
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
+
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3*sizeof(float)));
+    glEnableVertexAttribArray(1);
 
     
 
@@ -185,7 +195,7 @@ int main()
     glDeleteShader(vertexShader);
     glDeleteShader(fragmentShader);
 
-    shaderInit("../Engine/src/Shaders/vertex.glsl", "../Engine/src/Shaders/frag2.glsl");
+    shaderInit("../Engine/src/Shaders/vertex2.glsl", "../Engine/src/Shaders/frag2.glsl");
 
     vertexShader = glCreateShader(GL_VERTEX_SHADER);
     glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
@@ -226,22 +236,47 @@ int main()
     //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
     while (!glfwWindowShouldClose(window))
     {
-        clock_t t = clock();
+        //clock_t t = clock();
         glClearColor(0.1f, 0.1f, 0.1f, 0.5f);
         glClear(GL_COLOR_BUFFER_BIT);
         processInput(window);
 
 
+
+        float t = glfwGetTime();
+        float r = (cos(t) + 1) / 2;
+        float g = (cos(t+1.57) + 1) / 2;
+        float b = (sin(t) + 1) / 2;
+
+#ifdef COLOR_OUT
+        LOGL(r);
+        LOGL(" ");
+        LOGL(g);
+        LOGL(" ");
+        LOG(b);
+#endif
+        
+
+
+
         glUseProgram(shaderProgram);
+        int vertexColorLocation = glGetUniformLocation(shaderProgram, "c");
+        glUniform4f(vertexColorLocation, r, g, b, 1.0);
+
         glBindVertexArray(VAOs[0]);
         glDrawArrays(GL_TRIANGLES, 0, 3);
+
+
         glUseProgram(shaderProgram1);
+        int timeID = glGetUniformLocation(shaderProgram1, "tim");
+        //if (timeID == -1)LOG("NO");
+        glUniform1f(timeID,t);
         glBindVertexArray(VAOs[1]);
         glDrawArrays(GL_TRIANGLES, 0, 3);
         
         glfwSwapBuffers(window);
         glfwPollEvents();
-        t = clock() - t;
+        //t = clock() - t;
         //LOG(((float)CLOCKS_PER_SEC)/t);
         
     }

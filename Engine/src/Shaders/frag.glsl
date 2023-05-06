@@ -1,6 +1,9 @@
 #version 330 core
+#extension GL_ARB_explicit_uniform_location : enable
+#extension GL_ARB_explicit_attrib_location : enable
 out vec4 FragColor;
+uniform vec4 c;
 void main()
 {
-	FragColor = vec4(0.3843, 0.9098, 0.0588, 0.934);
+	FragColor = c;
 }

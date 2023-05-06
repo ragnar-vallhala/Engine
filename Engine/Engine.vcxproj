@@ -163,6 +163,7 @@
     <None Include="src\Shaders\frag.glsl" />
     <None Include="src\Shaders\frag2.glsl" />
     <None Include="src\Shaders\vertex.glsl" />
+    <None Include="src\Shaders\vertex2.glsl" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\shader.h" />
