@@ -6,7 +6,7 @@
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);      //adjusts images on resize
 void processInput(GLFWwindow* window);          //handles inputs
-
+void getFloat(float& val);
 
 
 int main()
@@ -45,10 +45,10 @@ int main()
         0,-0.5,0
     };
     float vertices2[]={
-            // positions         // colors
-          0.5f, 0.5f, 0.0f,  0.5f, 0.0f, 0.0f,   // bottom right
-         1.0, -0.5f, 0.0f,  0.0f, 0.5f, 0.0f,   // bottom left
-          0.0f,  -0.5f, 0.0f,  0.0f, 0.0f, 0.5f    // top 
+            // positions         // colors      //texture
+          0.0f, 1.0f, 0.0f,  0.5f, 0.0f, 0.0f, 0.5f, 0.0f,  // bottom right
+         -1.0,-1.0f, 0.0f,  0.0f, 0.5f, 0.0f,  0.0,1.0f, // bottom left
+          1.0f,  -1.0f, 0.0f,  0.0f, 0.0f, 0.5f, 1.0f,  1.0f   // top 
     };
     unsigned int indices[] = {  // note that we start from 0!
         0, 1, 2,   // first triangle
@@ -76,18 +76,58 @@ int main()
 
    
 
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
+    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)0);
     glEnableVertexAttribArray(0);
 
-    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3*sizeof(float)));
+    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(3*sizeof(float)));
     glEnableVertexAttribArray(1);
+
+    glVertexAttribPointer(2, 2, GL_FLOAT, GL_FALSE, 8 * sizeof(float), (void*)(6 * sizeof(float)));
+    glEnableVertexAttribArray(2);
 
 
 
     Shader *s1 = new Shader( "../Engine/src/Shaders/vertex.glsl", "../Engine/src/Shaders/frag.glsl" );
 
     Shader *s2 = new Shader("../Engine/src/Shaders/vertex2.glsl", "../Engine/src/Shaders/frag2.glsl");
+    //LOG("-------------------------------------------");
+    float offx{}, offy{};
+    /*LOG("Keep offsets from -0.5 to 0.5");
+    LOG("GIVE OFFSET X ::  ");
+    std::cin >> offx;
+    LOG("\nGIVE OFFSET Y ::  ");
+    std::cin >> offy;*/
 
+
+    //Surely work on it soon 
+    /* std::thread obj(getFloat, &offx);
+    obj.join();
+    std::thread obj1(getFloat, &offy);
+    obj1.join();*/
+
+
+
+    //Tex image parts below
+    int width, height, nrChannels;
+    unsigned char* data = stbi_load("../Engine/resources/crackGround.jpg", &width, &height, &nrChannels, 0);
+    //generate texture
+    unsigned int texture;
+    if (data) {
+        glGenTextures(1, &texture);
+        glBindTexture(GL_TEXTURE_2D, texture);
+        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+        glGenerateMipmap(GL_TEXTURE_2D);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR_MIPMAP_LINEAR);
+        glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+        stbi_image_free(data);
+    }
+    else {
+        LOG("ERROR:: CAN'T LOAD TEXTURE");
+    }
+    
+    
 
     //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
     while (!glfwWindowShouldClose(window))
@@ -116,11 +156,15 @@ int main()
         s1->setVec4("c", r, g, b, 1.0);
 
         glBindVertexArray(VAOs[0]);
-        glDrawArrays(GL_TRIANGLES, 0, 3);
+        //glDrawArrays(GL_TRIANGLES, 0, 3);
 
         s2->useProgram();
         s2->setVec1("tim", t);
         
+        s2->setVec1("offsetx", offx);
+        
+        s2->setVec1("offsety", offy);
+        //glBindTexture(GL_TEXTURE_2D, texture);
         glBindVertexArray(VAOs[1]);
         glDrawArrays(GL_TRIANGLES, 0, 3);
         
@@ -138,6 +182,13 @@ int main()
 
     return 0;
 }
+
+
+void getFloat(float& val) {
+    std::cin >> val;
+    return;
+}
+
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 {
