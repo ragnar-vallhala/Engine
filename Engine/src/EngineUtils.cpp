@@ -11,9 +11,6 @@ void readFile(const char* path, std::string& str)
 		std::stringstream stream;
 		stream << in.rdbuf();
 		str = stream.str();
-#ifdef TEST_LOG 
-		LOG(str);
-#endif
 		in.close();
 	}
 	catch(std::ifstream::failure e){
