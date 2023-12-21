@@ -30,7 +30,7 @@ Shader::Shader(const char* vertexShaderPath, const char* fragmentShaderPath)
 	//Creating and compiling the fragment shader
 	fragmentID = glCreateShader(GL_FRAGMENT_SHADER);
 	glShaderSource(fragmentID, 1, &fragmentShaderCode, NULL);
-	glCompileShader(fragmentID);
+	glCompileShader(fragmentID);    
 	glGetShaderiv(fragmentID, GL_COMPILE_STATUS, &success);
 
 	if (!success) {
