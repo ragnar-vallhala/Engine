@@ -598,6 +598,9 @@
     <Image Include="Resources\a.jpeg" />
     <Image Include="Resources\contourTex.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="RemCode\VertexImpl.txt" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

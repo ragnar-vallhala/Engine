@@ -1322,4 +1322,7 @@
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
+  <ItemGroup>
+    <Text Include="RemCode\VertexImpl.txt" />
+  </ItemGroup>
 </Project>

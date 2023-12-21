@@ -44,118 +44,6 @@ void Launch::Run() {
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
 
 
-    float vertices1[] = {
-        //position          //textureCoord
-        -0.5, 0.5, 0.0,     0.5, 0.5,
-        -1.0,-0.5, 0.0,     0.0, 0.0,
-         0.0,-0.5, 0.0,     1.0, 0.0
-
-    };
-    float vertices2[] = {
-        // positions         // colors
-      0.5f, 0.5f, 0.0f,  1.0f, 0.0f, 0.0f,   // bottom right
-     1.0, -0.5f, 0.0f,   0.0f, 1.0f, 0.0f,   // bottom left
-      0.0f,  -0.5f, 0.0f,  0.0f, 0.0f, 1.0f    // top 
-    };
-    unsigned int indices[] = {  // note that we start from 0!
-        0, 1, 2,   // first triangle
-    };
-
-
-    
-
-    unsigned int VAOs[2], VBOs[2];
-    glGenVertexArrays(2, VAOs);
-    glGenBuffers(2, VBOs);
-    glBindVertexArray(VAOs[0]);
-    glBindBuffer(GL_ARRAY_BUFFER, VBOs[0]);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices1), vertices1, GL_STATIC_DRAW);
-
-
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)0);
-    glEnableVertexAttribArray(0);
-    glVertexAttribPointer(1, 2, GL_FLOAT, GL_FALSE, 5 * sizeof(float), (void*)(3*sizeof(float)));
-    glEnableVertexAttribArray(1);
-
-
-    unsigned int EBO;
-    glGenBuffers(1, &EBO);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
-
-
-
-    glBindVertexArray(VAOs[1]);
-    glBindBuffer(GL_ARRAY_BUFFER, VBOs[1]);
-    glBufferData(GL_ARRAY_BUFFER, sizeof(vertices2), vertices2, GL_STATIC_DRAW);
-
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
-
-    glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)0);
-    glEnableVertexAttribArray(0);
-
-    glVertexAttribPointer(1, 3, GL_FLOAT, GL_FALSE, 6 * sizeof(float), (void*)(3 * sizeof(float)));
-    glEnableVertexAttribArray(1);
-
-    ImgData *imgd = new ImgData();
-    *imgd = ImageLoader::getImage("../Engine/Resources/contourTex.jpg");
-    
-
-    //craeteing and binding texture
-    unsigned int texture;
-    glGenTextures(1, &texture);
-    glActiveTexture(GL_TEXTURE0);
-    glBindTexture(GL_TEXTURE_2D, texture);
-
-    //setting texture parameters
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-
-    if (imgd->success) {
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, imgd->width, imgd->height, 0, GL_RGB, GL_UNSIGNED_BYTE, imgd->data);
-        glGenerateMipmap(GL_TEXTURE_2D);
-    }
-    else {
-        LOG("Can't load texture");
-    }
-    delete(imgd);
-    
-    ImgData* imgd1 = new ImgData();
-    *imgd1 = ImageLoader::getImage("../Engine/Resources/a.jpeg");
-
-
-    //craeteing and binding texture
-    unsigned int texture1;
-    glGenTextures(1, &texture1);
-    glActiveTexture(GL_TEXTURE1);
-    glBindTexture(GL_TEXTURE_2D, texture1);
-
-    //setting texture parameters
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_MIRRORED_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_MIRRORED_REPEAT);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-    glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
-
-    if (imgd1->success) {
-        glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, imgd1->width, imgd1->height, 0, GL_RGB, GL_UNSIGNED_BYTE, imgd1->data);
-        glGenerateMipmap(GL_TEXTURE_2D);
-    }
-    else {
-        LOG("Can't load texture");
-    }
-    delete(imgd1);
-
-
-
-    Shader* s1 = new Shader("../Engine/src/Shaders/vertex.glsl", "../Engine/src/Shaders/frag.glsl");
-
-    Shader* s2 = new Shader("../Engine/src/Shaders/vertex2.glsl", "../Engine/src/Shaders/frag2.glsl");
-    
-    
-
 
     //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
     while (!glfwWindowShouldClose(window))
@@ -167,36 +55,11 @@ void Launch::Run() {
 
 
 
-        float t = (float)glfwGetTime();
-        float r = (cos(t) + 1) / 2;
-        float g = (float)(cos(t + 1.57) + 1) / 2;
-        float b = (sin(t) + 1) / 2;
-
-
-        s1->useProgram();
-        s1->setBool("tex0", 0);
-        s1->setBool("tex1", 1);
-        s1->setVec1("time", glfwGetTime());
-        glBindVertexArray(VAOs[0]);
-        glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, 0);
-        //glDrawArrays(GL_TRIANGLES, 0, 3);
-
-        //s2->useProgram();
-        //s2->setVec1("tim", t);
-        
-        
-        glBindVertexArray(VAOs[1]);
-        glDrawElements(GL_TRIANGLES, 3, GL_UNSIGNED_INT, 0);
-
         glfwSwapBuffers(window);
         glfwPollEvents();
 
     }
 
-    glDeleteVertexArrays(2, VAOs);
-    glDeleteBuffers(2, VBOs);
-    delete s1;
-    delete s2;
 
     glfwTerminate();
 
