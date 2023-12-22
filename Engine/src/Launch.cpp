@@ -14,6 +14,8 @@ void Launch::processInput(GLFWwindow* window)
 }
 
 
+//Tobe removed
+void GetCubePos(int  num, std::vector<glm::vec3>* positions);
 
 void Launch::Run() {
 
@@ -228,9 +230,9 @@ void Launch::Run() {
 
     //transformation
     
-    glm::vec3 axis(1.0, 1.0, 1.0);
+    /*glm::vec3 axis(1.0, 1.0, 1.0);
     glm::mat4 transform = glm::mat4(1.0f);
-    transform = glm::translate(transform, glm::vec3(0.0f, 0.0f, -3.0f));
+    transform = glm::translate(transform, glm::vec3(0.0f, 0.0f, -3.0f));*/
 
     glEnable(GL_DEPTH_TEST);
     /*
@@ -242,6 +244,17 @@ void Launch::Run() {
     int windowHeight;
     int windowWidth;
 
+    std::vector<glm::vec3> positions;
+    int numCubes = 100;
+    GetCubePos(numCubes, &positions);
+    
+
+    std::vector<glm::vec3> axis{glm::vec3(1.0,0.0,0.0), glm::vec3(0.0, 1.0, 0.0), glm::vec3(0.0, 0.0, 1.0),
+                                glm::vec3(1.0, 1.0, 0.0), glm::vec3(1.0, 0.0, 1.0), glm::vec3(0.0, 1.0, 1.0), 
+                                glm::vec3(1.0, 1.0, 1.0), };
+
+
+    int time = 0;
     //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
     while (!glfwWindowShouldClose(window))
     {
@@ -250,20 +263,32 @@ void Launch::Run() {
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         processInput(window);
 
-        s->useProgram();
-
-        glm::mat4 rotation = glm::mat4(1.0);
-        rotation = glm::rotate(rotation, glm::radians(
-           90.0f * (float)(glfwGetTime() * 0.25)
-        ), axis);
-
-        glfwGetWindowSize(window, &windowWidth, &windowHeight);
-        s->setMat4("transform", transform * rotation);
-        glm::mat4 projection = glm::perspective(glm::radians(45.0f), ((float)windowWidth)/((float)windowHeight), 0.1f, 100.0f);
-        s->setMat4("projection", projection);
         
-        glBindVertexArray(VAO);
-        glDrawArrays(GL_TRIANGLES, 0, 36);
+        if (glfwGetTime() - time > 2) {
+            GetCubePos(numCubes, &positions);
+            time = glfwGetTime();
+        }
+            
+        
+        for (int i{}; i < numCubes; i++) {
+            s->useProgram();
+            glfwGetWindowSize(window, &windowWidth, &windowHeight);
+            glm::mat4 projection = glm::perspective(glm::radians(45.0f), ((float)windowWidth) / ((float)windowHeight), 0.1f, 100.0f);
+            s->setMat4("projection", projection);
+            glm::mat4 translation = glm::mat4(1.0f);
+            translation = glm::translate(translation, positions[i]);
+    
+            glm::mat4  rotation = glm::mat4(1.0f);
+            rotation = glm::rotate(rotation, glm::radians((float)glfwGetTime() * 10.0f), axis[i % 7]);
+            s->setMat4("transform", translation*rotation);
+            glBindVertexArray(VAO);
+            glDrawArrays(GL_TRIANGLES, 0, 36);
+        }
+        
+        
+        
+        
+        
         //glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, (void*)0);
 
         glfwSwapBuffers(window);
@@ -276,3 +301,41 @@ void Launch::Run() {
 
 }
 
+glm::vec3 Launch::GetrandomPosition(glm::vec3 min, glm::vec3 max)
+{
+    float x = (min.x - max.x) * 100;
+    float y = (min.y - max.y) * 100;
+    float z = (min.z - max.z) * 100;
+
+
+    float numx, numy, numz;
+
+    if (x != 0)
+        numx = rand() % ((int)x);
+    else
+        numx = 0.0;
+    
+    if (y != 0)
+        numy = rand() % ((int)y);
+    else
+        numy = 0.0;
+
+    if (z != 0)
+        numz = rand() % ((int)z);
+    else
+        numz = 0.0;
+
+    glm::vec3 result = glm::vec3(numx, numy, numz);
+    result /= 100;
+    result += min;
+    
+    return result;
+}
+void GetCubePos(int  num ,std::vector<glm::vec3>* positions) {
+    positions->clear();
+
+    for (int i{}; i < num; i++) {
+        positions->push_back(Launch::GetrandomPosition(glm::vec3(-10.0, -10.0, -30.0), glm::vec3(10.0, 10.0, -5.0)));
+    }
+
+}
