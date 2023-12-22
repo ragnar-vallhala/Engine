@@ -6,7 +6,6 @@
 #include <fstream>
 #include <string>
 #include <sstream>
-#include "shader.h"
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
@@ -25,7 +24,6 @@
 #define LOG(x)
 #define LOGL(x)
 #endif
-
 
 
 void readFile(const char* path, std::string &str);

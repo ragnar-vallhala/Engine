@@ -1,5 +1,4 @@
 #include "shader.h"
-#include "EngineUtils.h"
 
 
 Shader::Shader(const char* vertexShaderPath, const char* fragmentShaderPath)
@@ -85,4 +84,11 @@ void Shader::setVec4(const char* variable, float x, float y, float z, float w)
 {
 	int uniformLocation = glGetUniformLocation(m_ID, variable);
 	glUniform4f(uniformLocation, x,y,z,w);
+}
+
+void Shader::setMat4(const char* variable, glm::mat4 mat)
+{
+	int uniformLocation = glGetUniformLocation(m_ID, variable);
+	glUniformMatrix4fv(uniformLocation,1,GL_FALSE, glm::value_ptr(mat));
+	
 }

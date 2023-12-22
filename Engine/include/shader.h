@@ -1,5 +1,8 @@
 #pragma once
-
+#include "EngineUtils.h"
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 class Shader
 {
 
@@ -28,6 +31,8 @@ public:
 
 	/*Update uniform vec4*/
 	void setVec4(const char* variable, float x, float y, float z, float w);
+
+	void setMat4(const char* variable, glm::mat4 mat);
 
 
 
