@@ -229,13 +229,18 @@ void Launch::Run() {
     //transformation
     
     glm::vec3 axis(1.0, 1.0, 1.0);
-    
-    glDisable(GL_CULL_FACE);
+    glm::mat4 transform = glm::mat4(1.0f);
+    transform = glm::translate(transform, glm::vec3(0.0f, 0.0f, -3.0f));
+
     glEnable(GL_DEPTH_TEST);
     /*
             /////////////////////////////////////////////////////////////////////////
     */
 #define TAU 6.28318530718
+
+
+    int windowHeight;
+    int windowWidth;
 
     //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
     while (!glfwWindowShouldClose(window))
@@ -246,11 +251,17 @@ void Launch::Run() {
         processInput(window);
 
         s->useProgram();
-        glm::mat4 transform = glm::mat4(1.0);
-        transform = glm::rotate(transform, glm::radians(
+
+        glm::mat4 rotation = glm::mat4(1.0);
+        rotation = glm::rotate(rotation, glm::radians(
            90.0f * (float)(glfwGetTime() * 0.25)
         ), axis);
-        s->setMat4("transform", transform);
+
+        glfwGetWindowSize(window, &windowWidth, &windowHeight);
+        s->setMat4("transform", transform * rotation);
+        glm::mat4 projection = glm::perspective(glm::radians(45.0f), ((float)windowWidth)/((float)windowHeight), 0.1f, 100.0f);
+        s->setMat4("projection", projection);
+        
         glBindVertexArray(VAO);
         glDrawArrays(GL_TRIANGLES, 0, 36);
         //glDrawElements(GL_TRIANGLES, 36, GL_UNSIGNED_INT, (void*)0);
