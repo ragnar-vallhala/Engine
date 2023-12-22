@@ -2167,6 +2167,9 @@
     <Image Include="Resources\a.jpeg">
       <Filter>Resource Files</Filter>
     </Image>
+    <Image Include="Resources\nb.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
   </ItemGroup>
   <ItemGroup>
     <Text Include="RemCode\VertexImpl.txt" />

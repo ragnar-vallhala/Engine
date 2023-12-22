@@ -1,6 +1,6 @@
 #include "Launch.h"
 
-
+glm::mat4 view = glm::mat4(1.0f);
 
 void Launch::framebuffer_size_callback(GLFWwindow* window, int width, int height)
 {
@@ -9,8 +9,29 @@ void Launch::framebuffer_size_callback(GLFWwindow* window, int width, int height
 
 void Launch::processInput(GLFWwindow* window)
 {
-    if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
+    if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS) 
         glfwSetWindowShouldClose(window, true);
+
+
+    if (glfwGetKey(window, GLFW_KEY_W) == GLFW_PRESS) {
+        UpdateViewMatrix(&view, FRONT, 0.01);
+    }
+        
+    if (glfwGetKey(window, GLFW_KEY_S) == GLFW_PRESS) {
+        UpdateViewMatrix(&view, BACK, 0.01);
+    }
+    if (glfwGetKey(window, GLFW_KEY_A) == GLFW_PRESS) {
+        UpdateViewMatrix(&view, LEFT, 0.01);
+    }
+    if (glfwGetKey(window, GLFW_KEY_D) == GLFW_PRESS) {
+        UpdateViewMatrix(&view, RIGHT, 0.01);
+    }
+    if (glfwGetKey(window, GLFW_KEY_DOWN) == GLFW_PRESS) {
+        UpdateViewMatrix(&view, DOWN, 0.01);
+    }
+    if (glfwGetKey(window, GLFW_KEY_UP) == GLFW_PRESS) {
+        UpdateViewMatrix(&view, UP, 0.01);
+    }
 }
 
 
@@ -32,15 +53,26 @@ void Launch::Run() {
         return;
     }
 
+    ImgData icon = ImageLoader::getImage("../Engine/Resources/nb.jpg");
+    if (icon.success) {
+        glfwSetWindowIcon(window, 1, (GLFWimage*)icon.data);
+    }
+    else {
+        std::cout << "Can't Load Image" << std::endl;
+    }
+
     glfwMakeContextCurrent(window);
 
-
+    
 
     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
     {
         LOGL("Failed to initialize GLAD");
         return;
     }
+
+
+
 
     glViewport(0, 0, 800, 600);
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
@@ -245,7 +277,7 @@ void Launch::Run() {
     int windowWidth;
 
     std::vector<glm::vec3> positions;
-    int numCubes = 100;
+    int numCubes = 1000;
     GetCubePos(numCubes, &positions);
     
 
@@ -256,6 +288,14 @@ void Launch::Run() {
 
     int time = 0;
     //glPolygonMode(GL_FRONT_AND_BACK, GL_LINE);
+    
+
+
+
+
+
+
+
     while (!glfwWindowShouldClose(window))
     {
 
@@ -264,11 +304,12 @@ void Launch::Run() {
         processInput(window);
 
         
-        if (glfwGetTime() - time > 2) {
+       /* if (glfwGetTime() - time > 2) {
             GetCubePos(numCubes, &positions);
             time = glfwGetTime();
-        }
-            
+        }*/
+        
+        
         
         for (int i{}; i < numCubes; i++) {
             s->useProgram();
@@ -280,7 +321,7 @@ void Launch::Run() {
     
             glm::mat4  rotation = glm::mat4(1.0f);
             rotation = glm::rotate(rotation, glm::radians((float)glfwGetTime() * 10.0f), axis[i % 7]);
-            s->setMat4("transform", translation*rotation);
+            s->setMat4("transform", view * translation * rotation);
             glBindVertexArray(VAO);
             glDrawArrays(GL_TRIANGLES, 0, 36);
         }
@@ -335,7 +376,35 @@ void GetCubePos(int  num ,std::vector<glm::vec3>* positions) {
     positions->clear();
 
     for (int i{}; i < num; i++) {
-        positions->push_back(Launch::GetrandomPosition(glm::vec3(-10.0, -10.0, -30.0), glm::vec3(10.0, 10.0, -5.0)));
+        positions->push_back(Launch::GetrandomPosition(glm::vec3(-20.0, -20.0, -60.0), glm::vec3(10.0, 10.0, -5.0)));
     }
 
+}
+
+
+void Launch::UpdateViewMatrix(glm::mat4* view, INPUT input, float translationSpeed, float rotationSpeed)
+{
+
+    switch (input) {
+    case FRONT:
+        *view = glm::translate(*view, glm::vec3(0.0, 0.0, 1.0) * translationSpeed);
+        break;
+    case LEFT:
+        *view = glm::translate(*view, glm::vec3(1.0, 0.0, 0.0) * translationSpeed);
+        break;
+    case RIGHT:
+        *view = glm::translate(*view, glm::vec3(-1.0, 0.0, 0.0) * translationSpeed);
+        break;
+    case BACK:
+        *view = glm::translate(*view, glm::vec3(0.0, 0.0, -1.0) * translationSpeed);
+        break;
+    case UP:
+        *view = glm::translate(*view, glm::vec3(0.0, -1.0, 0.0) * translationSpeed);
+        break;
+    case DOWN:
+        *view = glm::translate(*view, glm::vec3(0.0, 1.0, 0.0) * translationSpeed);
+        break;
+    default:
+        return;
+    }
 }

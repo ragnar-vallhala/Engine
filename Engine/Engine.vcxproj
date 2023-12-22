@@ -597,6 +597,7 @@
   <ItemGroup>
     <Image Include="Resources\a.jpeg" />
     <Image Include="Resources\contourTex.jpg" />
+    <Image Include="Resources\nb.jpg" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="RemCode\VertexImpl.txt" />
