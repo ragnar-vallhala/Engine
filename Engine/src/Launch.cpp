@@ -1,7 +1,7 @@
 #include "Launch.h"
 
 glm::mat4 view = glm::mat4(1.0f);
-
+glm::mat4 look = glm::mat4(1.0f);
 
 void Launch::framebuffer_size_callback(GLFWwindow* window, int width, int height)
 {
