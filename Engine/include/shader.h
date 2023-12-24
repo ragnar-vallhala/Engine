@@ -31,6 +31,7 @@ public:
 
 	/*Update uniform vec4*/
 	void setVec4(const char* variable, float x, float y, float z, float w);
+	void setVec4(const char* variable, glm::vec4 vector);
 
 	void setMat4(const char* variable, glm::mat4 mat);
 

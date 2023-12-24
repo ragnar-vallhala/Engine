@@ -11,13 +11,14 @@
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
+#include <glm/gtc/quaternion.hpp>
+#include <glm/gtx/quaternion.hpp>
 
 
 
 
 
-
-#if 0
+#if 1
 //#define COLOR_OUT			//Logs color for the triangle
 #define TEST_LOG			//Logs the shader code read from files
 #define LOG(x) std::cout<<x<<std::endl;

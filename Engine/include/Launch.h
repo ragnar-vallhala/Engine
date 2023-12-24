@@ -5,7 +5,8 @@
 #include "EngineUtils.h"
 #include "shader.h"
 #include "image.h"
-
+#include "Entity.h"
+#include "Camera.h"
 class Launch {
 
 public:
