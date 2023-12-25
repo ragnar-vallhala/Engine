@@ -110,16 +110,16 @@ void Launch::Run() {
     myFirstObject._renderer.SetVBO(vertices, 6 * 6 * 5);
     myFirstObject._renderer.SetAttribPointer(0, 3, 5 * sizeof(float), 0);
     myFirstObject._renderer.SetAttribPointer(1, 2, 5 * sizeof(float), 3 * sizeof(float));
-    myFirstObject._renderer.LoadShaders("../Engine/src/Shaders/LightSourceVert.glsl", "../Engine/src/Shaders/LightSourceFrag.glsl");
+    myFirstObject._renderer.LoadShaders("../Engine/src/Shaders/ObjectVert.glsl", "../Engine/src/Shaders/ObjectFrag.glsl");
     myFirstObject.MoveTo(glm::vec3(0, 0, -3.2));
 
-    glm::vec4 objectColor = glm::vec4(1.0f, 0.3f, 1.0f, 1.0f);
+    glm::vec4 objectColor = glm::vec4(0.5f, 0.5f, 0.0f, 1.0f); //reflected
 
 
     Camera camera{};
     camera.MoveTo(glm::vec3(0, 0.0, 3.2));
 
-    LightSource light{glm::vec4(0.0f,1.0f,0.0f,1.0f)};
+    LightSource light{glm::vec4(0.3f,1.0f,0.6f,1.0f)}; //source
     light._renderer.SetVBO(vertices, 6 * 6 * 5);
     light._renderer.SetAttribPointer(0, 3, 5 * sizeof(float), 0);
     light._renderer.SetAttribPointer(1, 2, 5 * sizeof(float), 3 * sizeof(float));
@@ -158,8 +158,7 @@ void Launch::Run() {
         light._renderer._shader->setMat4("view", glm::mat4(1.0f));
         light._renderer._shader->setMat4("projection", camera.GetPerspectiveMatrix((float)windowWidth / (float)windowHeight));
         light._renderer._shader->setMat4("transformation", light.ModelMatrix());
-        light._renderer._shader->setVec4("color", light.GetColor());
-        light._renderer._shader->setVec4("lightColor", glm::vec4(1.0,1.0,1.0,1.0));
+        light._renderer._shader->setVec4("lightColor", light.GetColor());
         light._renderer.Render();
 
 

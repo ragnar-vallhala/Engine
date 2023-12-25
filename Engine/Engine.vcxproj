@@ -309,6 +309,8 @@
     <None Include="src\Shaders\frag2.glsl" />
     <None Include="src\Shaders\LightSourceVert.glsl" />
     <None Include="src\Shaders\LightSourceFrag.glsl" />
+    <None Include="src\Shaders\ObjectFrag.glsl" />
+    <None Include="src\Shaders\ObjectVert.glsl" />
     <None Include="src\Shaders\vertex.glsl" />
     <None Include="src\Shaders\vertex2.glsl" />
   </ItemGroup>
