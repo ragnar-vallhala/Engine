@@ -7,6 +7,7 @@
 #include "image.h"
 #include "Entity.h"
 #include "Camera.h"
+#include "LightSource.h"
 class Launch {
 
 public:

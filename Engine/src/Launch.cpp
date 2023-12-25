@@ -51,9 +51,6 @@ const float vertices[]
 
 
 
-glm::vec4 lightColor{ 1.0f, 1.0f, 1.0f,1.0f };
-
-
 
 
 void Launch::framebuffer_size_callback(GLFWwindow* window, int width, int height)
@@ -116,8 +113,18 @@ void Launch::Run() {
     myFirstObject._renderer.LoadShaders("../Engine/src/Shaders/LightSourceVert.glsl", "../Engine/src/Shaders/LightSourceFrag.glsl");
     myFirstObject.MoveTo(glm::vec3(0, 0, -3.2));
 
+    glm::vec4 objectColor = glm::vec4(1.0f, 0.3f, 1.0f, 1.0f);
+
+
     Camera camera{};
-    camera.MoveTo(glm::vec3(0, 0, 3.2));
+    camera.MoveTo(glm::vec3(0, 0.0, 3.2));
+
+    LightSource light{glm::vec4(0.0f,1.0f,0.0f,1.0f)};
+    light._renderer.SetVBO(vertices, 6 * 6 * 5);
+    light._renderer.SetAttribPointer(0, 3, 5 * sizeof(float), 0);
+    light._renderer.SetAttribPointer(1, 2, 5 * sizeof(float), 3 * sizeof(float));
+    light._renderer.LoadShaders("../Engine/src/Shaders/LightSourceVert.glsl", "../Engine/src/Shaders/LightSourceFrag.glsl");
+    light.MoveTo(glm::vec3(3.0, 2.0, -8.2));
 
     //===========================================================================================================================
     // --------------------------------------------------------------------------------------------------------------------------
@@ -142,9 +149,22 @@ void Launch::Run() {
         myFirstObject._renderer._shader->setMat4("view", glm::mat4(1.0f));
         myFirstObject._renderer._shader->setMat4("projection", camera.GetPerspectiveMatrix((float)windowWidth/(float)windowHeight));
         myFirstObject._renderer._shader->setMat4("transformation", myFirstObject.ModelMatrix());
-        myFirstObject._renderer._shader->setVec4("color", lightColor);
+        myFirstObject._renderer._shader->setVec4("color", objectColor);
+        myFirstObject._renderer._shader->setVec4("lightColor", light.GetColor());
         myFirstObject._renderer.Render();
         
+
+        light._renderer._shader->useProgram();
+        light._renderer._shader->setMat4("view", glm::mat4(1.0f));
+        light._renderer._shader->setMat4("projection", camera.GetPerspectiveMatrix((float)windowWidth / (float)windowHeight));
+        light._renderer._shader->setMat4("transformation", light.ModelMatrix());
+        light._renderer._shader->setVec4("color", light.GetColor());
+        light._renderer._shader->setVec4("lightColor", glm::vec4(1.0,1.0,1.0,1.0));
+        light._renderer.Render();
+
+
+
+
         glfwSwapBuffers(window);
         glfwPollEvents();
 
