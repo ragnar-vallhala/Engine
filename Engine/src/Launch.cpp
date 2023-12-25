@@ -50,12 +50,8 @@ const float vertices[]
 };
 
 
-glm::vec3 lightSourcePosition{ 1.0f, 1.0f, 1.0f };
+
 glm::vec4 lightColor{ 1.0f, 1.0f, 1.0f,1.0f };
-glm::vec3 objectPosition{ 0.0f, 0.0f, 0.0f};
-glm::mat4 viewMatrix(1.0f);
-glm::mat4 projectionMatrix(1.0f);
-glm::mat4 transformationMatrix(1.0f);
 
 
 
