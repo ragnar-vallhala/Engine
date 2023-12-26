@@ -180,8 +180,17 @@ void Launch::Run() {
         light1._renderer._shader->setVec4("lightColor",                 light1.GetColor());
         light1._renderer.Render();
 
+#define TAU 6.28318530718
+#define f1  0.5
+#define f2  0.3
+#define f3  0.2
+#define f4  0.6
 
 
+        glm::vec4 light1Color = glm::vec4(glm::sin(glfwGetTime() * f1 * TAU) * 0.5 + 0.5, glm::cos(glfwGetTime() * f2 * TAU) * 0.5 + 0.5, 0.3f, 1.0f);
+        glm::vec4 light2Color = glm::vec4(glm::cos(glfwGetTime() * f3 * TAU) * 0.5 + 0.5, glm::sin(glfwGetTime() * f4 * TAU) * 0.5 + 0.5, 0.4f, 1.0f);
+        light.SetColor(light1Color);
+        light1.SetColor(light2Color);
 
 
         myFirstObject._renderer._shader->useProgram();
