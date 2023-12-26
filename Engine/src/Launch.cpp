@@ -112,19 +112,29 @@ void Launch::Run() {
 
     myFirstObject.RotateTo(glm::angleAxis(glm::radians(30.0f), glm::vec3(0.5, 1.0, 0.0)));
 
-    glm::vec4 objectColor = glm::vec4(0.5f, 0.5f, 0.0f, 1.0f); //reflected
+    glm::vec4 objectColor = glm::vec4(1.0f, 0.5f, 0.0f, 1.0f); //reflected
 
 
     Camera camera{};
     camera.MoveTo(glm::vec3(0, 0.0, 0.0));
 
-    LightSource light{glm::vec4(1.0f, 1.0f, 1.0f, 1.0f)}; //source
+    LightSource light{glm::vec4(0.0f, 1.0f, 0.0f, 1.0f)}; //source
     light._renderer.SetVBO(vertices, 6 * 6 * 6);
     light._renderer.SetAttribPointer(0, 3, 6 * sizeof(float), 0);
     light._renderer.SetAttribPointer(1, 3, 6 * sizeof(float), 3 * sizeof(float));
     light._renderer.LoadShaders("../Engine/src/Shaders/LightSourceVert.glsl", "../Engine/src/Shaders/LightSourceFrag.glsl");
-    light.MoveTo(glm::vec3(1.0, 0.0,-7.0));
-    light.Scale(0.5);
+    light.MoveTo(glm::vec3(0.5, 0.0,-6.0));
+    light.Scale(0.1);
+
+
+
+    LightSource light1{ glm::vec4(1.0f, 0.0f, 0.0f, 1.0f) }; //source
+    light1._renderer.SetVBO(vertices, 6 * 6 * 6);
+    light1._renderer.SetAttribPointer(0, 3, 6 * sizeof(float), 0);
+    light1._renderer.SetAttribPointer(1, 3, 6 * sizeof(float), 3 * sizeof(float));
+    light1._renderer.LoadShaders("../Engine/src/Shaders/LightSourceVert.glsl", "../Engine/src/Shaders/LightSourceFrag.glsl");
+    light1.MoveTo(glm::vec3(1.0, 0.0, -5.0));
+    light1.Scale(0.1);
 
     //===========================================================================================================================
     // --------------------------------------------------------------------------------------------------------------------------
@@ -148,7 +158,7 @@ void Launch::Run() {
 
         glm::mat4 lightRotation = glm::mat4(1.0f);
         lightRotation = glm::translate(lightRotation, myFirstObject.GetPosition());
-        lightRotation = lightRotation *  glm::toMat4(glm::angleAxis(glm::radians((float)glfwGetTime() * 6), glm::vec3(0.0, 1.0, 0.0)));
+        lightRotation = lightRotation *  glm::toMat4(glm::angleAxis(glm::radians((float)glfwGetTime() * 30), glm::vec3(0.0, 1.0, 0.0)));
         lightRotation = glm::translate(lightRotation, -myFirstObject.GetPosition());
 
         light._renderer._shader->useProgram();
@@ -159,6 +169,23 @@ void Launch::Run() {
         light._renderer.Render();
 
 
+
+        glm::mat4 lightRotation1 = glm::mat4(1.0f);
+        lightRotation1 = glm::translate(lightRotation1, myFirstObject.GetPosition());
+        lightRotation1 = lightRotation1 * glm::toMat4(glm::angleAxis(glm::radians((float)glfwGetTime() * 30), glm::vec3(0.0, 1.0, 0.0)));
+        lightRotation1 = glm::translate(lightRotation1, -myFirstObject.GetPosition());
+
+        light1._renderer._shader->useProgram();
+        light1._renderer._shader->setMat4("view", lightRotation1);
+        light1._renderer._shader->setMat4("projection", camera.GetPerspectiveMatrix((float)windowWidth / (float)windowHeight));
+        light1._renderer._shader->setMat4("transformation", light1.ModelMatrix());
+        light1._renderer._shader->setVec4("lightColor", light1.GetColor());
+        light1._renderer.Render();
+
+
+
+
+
         myFirstObject._renderer._shader->useProgram();
         myFirstObject.RotateTo(glm::toMat4(glm::angleAxis(glm::radians((float)glfwGetTime()*18), glm::normalize(glm::vec3(-1.0, -1.0, 1.0)))));
         myFirstObject._renderer._shader->setMat4("view", glm::mat4(1.0f));
@@ -167,6 +194,8 @@ void Launch::Run() {
         myFirstObject._renderer._shader->setVec4("color", objectColor);
         myFirstObject._renderer._shader->setVec4("lightColor", light.GetColor());
         myFirstObject._renderer._shader->setVec4("lightPosition", lightRotation * light.ModelMatrix()  * glm::vec4(light.GetPosition(), 1.0f));
+        myFirstObject._renderer._shader->setVec4("lightColor1", light1.GetColor());
+        myFirstObject._renderer._shader->setVec4("lightPosition1", lightRotation1 * light1.ModelMatrix() * glm::vec4(light1.GetPosition(), 1.0f));
         myFirstObject._renderer._shader->setVec4("cameraPos", glm::vec4(camera.GetPosition(),1.0));
         myFirstObject._renderer.Render();
 
