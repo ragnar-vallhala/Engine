@@ -124,7 +124,7 @@ void Launch::Run() {
     light._renderer.SetAttribPointer(1, 3, 6 * sizeof(float), 3 * sizeof(float));
     light._renderer.LoadShaders("../Engine/src/Shaders/LightSourceVert.glsl", "../Engine/src/Shaders/LightSourceFrag.glsl");
     light.MoveTo(glm::vec3(0.5, 0.0,-6.0));
-    light.Scale(0.1);
+    light.Scale((float)0.1);
 
 
 
@@ -134,7 +134,7 @@ void Launch::Run() {
     light1._renderer.SetAttribPointer(1, 3, 6 * sizeof(float), 3 * sizeof(float));
     light1._renderer.LoadShaders("../Engine/src/Shaders/LightSourceVert.glsl", "../Engine/src/Shaders/LightSourceFrag.glsl");
     light1.MoveTo(glm::vec3(1.0, 0.0, -5.0));
-    light1.Scale(0.1);
+    light1.Scale((float)0.1);
 
     //===========================================================================================================================
     // --------------------------------------------------------------------------------------------------------------------------
@@ -180,11 +180,11 @@ void Launch::Run() {
         light1._renderer._shader->setVec4("lightColor",                 light1.GetColor());
         light1._renderer.Render();
 
-#define TAU 6.28318530718
-#define f1  0.5
-#define f2  0.3
-#define f3  0.2
-#define f4  0.6
+constexpr auto TAU = 6.28318530718;
+constexpr auto f1  = 0.5;
+constexpr auto f2  = 0.3;
+constexpr auto f3  = 0.2;
+constexpr auto f4  = 0.6;
 
 
         glm::vec4 light1Color = glm::vec4(glm::sin(glfwGetTime() * f1 * TAU) * 0.5 + 0.5, glm::cos(glfwGetTime() * f2 * TAU) * 0.5 + 0.5, 0.3f, 1.0f);

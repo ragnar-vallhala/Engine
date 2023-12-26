@@ -23,7 +23,7 @@ in vec3 normal;
 in vec4 fragPos;
 
 
-float ambientFractor = 0.1;
+float ambientFractor = 0.05;
 float specStrength = 2.0;
 
 
