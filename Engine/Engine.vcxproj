@@ -608,6 +608,7 @@
   </ItemGroup>
   <ItemGroup>
     <Image Include="Resources\a.jpeg" />
+    <Image Include="Resources\container.png" />
     <Image Include="Resources\contourTex.jpg" />
     <Image Include="Resources\nb.jpg" />
   </ItemGroup>

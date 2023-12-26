@@ -467,6 +467,8 @@
     </None>
     <None Include="src\Shaders\LightSourceFrag.glsl" />
     <None Include="src\Shaders\LightSourceVert.glsl" />
+    <None Include="src\Shaders\ObjectFrag.glsl" />
+    <None Include="src\Shaders\ObjectVert.glsl" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="include\shader.h">
@@ -2194,6 +2196,9 @@
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="Resources\nb.jpg">
+      <Filter>Resource Files</Filter>
+    </Image>
+    <Image Include="Resources\container.png">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>
