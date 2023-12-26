@@ -148,7 +148,7 @@ void Launch::Run() {
 
         glm::mat4 lightRotation = glm::mat4(1.0f);
         lightRotation = glm::translate(lightRotation, myFirstObject.GetPosition());
-        lightRotation = lightRotation *  glm::toMat4(glm::angleAxis(glm::radians((float)glfwGetTime() * 30), glm::vec3(0.0, 1.0, 0.0)));
+        lightRotation = lightRotation *  glm::toMat4(glm::angleAxis(glm::radians((float)glfwGetTime() * 6), glm::vec3(0.0, 1.0, 0.0)));
         lightRotation = glm::translate(lightRotation, -myFirstObject.GetPosition());
 
         light._renderer._shader->useProgram();
@@ -160,15 +160,17 @@ void Launch::Run() {
 
 
         myFirstObject._renderer._shader->useProgram();
+        myFirstObject.RotateTo(glm::toMat4(glm::angleAxis(glm::radians((float)glfwGetTime()*18), glm::normalize(glm::vec3(-1.0, -1.0, 1.0)))));
         myFirstObject._renderer._shader->setMat4("view", glm::mat4(1.0f));
         myFirstObject._renderer._shader->setMat4("projection", camera.GetPerspectiveMatrix((float)windowWidth / (float)windowHeight));
         myFirstObject._renderer._shader->setMat4("transformation", myFirstObject.ModelMatrix());
         myFirstObject._renderer._shader->setVec4("color", objectColor);
         myFirstObject._renderer._shader->setVec4("lightColor", light.GetColor());
         myFirstObject._renderer._shader->setVec4("lightPosition", lightRotation * light.ModelMatrix()  * glm::vec4(light.GetPosition(), 1.0f));
+        myFirstObject._renderer._shader->setVec4("cameraPos", glm::vec4(camera.GetPosition(),1.0));
         myFirstObject._renderer.Render();
 
-
+        
 
 
 
