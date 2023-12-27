@@ -24,13 +24,13 @@ in vec4 fragPos;
 in vec2 uv;
 
 
-float ambientFractor = 0.1;
-float specStrength = 0.5;
+float ambientFractor = 0.2;
+float specStrength = 0.6;
 
 void main(){
     vec4 sampledColor  = texture(material.diffuseMap, uv);
 
-    vec4 ambient = ambientFractor * sampledColor * lightColor;
+    vec4 ambient = ambientFractor * sampledColor * (lightColor + lightColor1);
 
     vec3 toLight  = normalize(lightPosition.xyz - (fragPos.xyz)/fragPos.w);
     float diffuseFactor = dot(toLight,normal)*0.5+0.5;
@@ -44,7 +44,7 @@ void main(){
 
     vec3 toLight1  = normalize(lightPosition1.xyz - (fragPos.xyz)/fragPos.w);
     float diffuseFactor1 = dot(toLight1,normal)*0.5+0.5;
-    vec4 diffuse1 = diffuseFactor * sampledColor * lightColor1;
+    vec4 diffuse1 = diffuseFactor1 * sampledColor * lightColor1;
     
     vec3 viewDir1 = normalize(cameraPos.xyz - fragPos.xyz);
     vec3 reflectDir1 = reflect(-toLight1,normal);

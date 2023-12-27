@@ -136,7 +136,7 @@ void Launch::Run() {
     myFirstObject.MoveTo(glm::vec3(0.0, 0.0, -5.0));
     myFirstObject.RotateTo(glm::angleAxis(glm::radians(30.0f), glm::vec3(0.5, 1.0, 0.0)));
 
-    glm::vec4 objectColor = glm::vec4(1.0f, 0.5f, 0.0f, 1.0f); //reflected
+    glm::vec4 objectColor = glm::vec4(2.0f, 0.5f, 0.0f, 1.0f); //reflected
 
 
     Camera camera{};
@@ -157,7 +157,7 @@ void Launch::Run() {
     light1._renderer.SetAttribPointer(0, 3, 8 * sizeof(float), 0);
     light1._renderer.SetAttribPointer(1, 3, 8 * sizeof(float), 3 * sizeof(float));
     light1._renderer.LoadShaders("../Engine/src/Shaders/LightSourceVert.glsl", "../Engine/src/Shaders/LightSourceFrag.glsl");
-    light1.MoveTo(glm::vec3(1.0, 0.0, -5.0));
+    light1.MoveTo(glm::vec3(0.5, 0.0, -4.0));
     light1.Scale((float)0.1);
 
     //===========================================================================================================================
@@ -171,7 +171,7 @@ void Launch::Run() {
     while (!glfwWindowShouldClose(window))
     {
 
-        glClearColor(0.1f, 0.1f, 0.1f, 0.5f);
+        glClearColor(0.0f, 0.0f, 0.0f, 0.0f);
         glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         processInput(window);
 
