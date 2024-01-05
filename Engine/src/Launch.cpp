@@ -278,7 +278,7 @@ void Launch::Run() {
     int windowWidth;
 
     std::vector<glm::vec3> positions;
-    int numCubes = 1000;
+    int numCubes = 100;
     GetCubePos(numCubes, &positions);
     
 
