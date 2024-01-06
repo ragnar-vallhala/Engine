@@ -152,7 +152,7 @@ void Launch::Run() {
 
 
 
-    LightSource light1{ glm::vec4(1.0f, 0.0f, 0.0f, 1.0f) }; //source
+    LightSource light1{ glm::vec4(0.0f, 0.0f, 1.0f, 1.0f) }; //source
     light1._renderer.SetVBO(vertices, 6 * 6 * 8);
     light1._renderer.SetAttribPointer(0, 3, 8 * sizeof(float), 0);
     light1._renderer.SetAttribPointer(1, 3, 8 * sizeof(float), 3 * sizeof(float));

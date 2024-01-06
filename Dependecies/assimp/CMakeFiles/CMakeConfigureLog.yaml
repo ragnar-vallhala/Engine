@@ -1,0 +1,554 @@
+
+---
+events:
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineSystem.cmake:233 (message)"
+      - "CMakeLists.txt:58 (PROJECT)"
+    message: |
+      The system is: Windows - 10.0.22621 - AMD64
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCCompiler.cmake:123 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:58 (PROJECT)"
+    message: |
+      Compiling the C compiler identification source file "CMakeCCompilerId.c" succeeded.
+      Compiler:  
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      MSBuild version 17.6.3+07e294721 for .NET Framework
+      Build started 06-01-2024 00:13:20.
+      
+      Project "C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\3.28.1\\CompilerIdC\\CompilerIdC.vcxproj" on node 1 (default targets).
+      PrepareForBuild:
+        Creating directory "Debug\\".
+        Creating directory "Debug\\CompilerIdC.tlog\\".
+      InitializeBuildStatus:
+        Creating "Debug\\CompilerIdC.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+      ClCompile:
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TC /FC /errorReport:queue CMakeCCompilerId.c
+        CMakeCCompilerId.c
+      Link:
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdC.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdC.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdC.lib" /MACHINE:X64 Debug\\CMakeCCompilerId.obj
+        CompilerIdC.vcxproj -> C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\3.28.1\\CompilerIdC\\CompilerIdC.exe
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_C_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_C_COMPILER=C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe
+      FinalizeBuildStatus:
+        Deleting file "Debug\\CompilerIdC.tlog\\unsuccessfulbuild".
+        Touching "Debug\\CompilerIdC.tlog\\CompilerIdC.lastbuildstate".
+      Done Building Project "C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\3.28.1\\CompilerIdC\\CompilerIdC.vcxproj" (default targets).
+      
+      Build succeeded.
+          0 Warning(s)
+          0 Error(s)
+      
+      Time Elapsed 00:00:01.04
+      
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.exe"
+      
+      Compilation of the C compiler identification source "CMakeCCompilerId.c" produced "CompilerIdC.vcxproj"
+      
+      The C compiler identification is MSVC, found in:
+        C:/Users/Asus/Engine/Dependecies/assimp/CMakeFiles/3.28.1/CompilerIdC/CompilerIdC.exe
+      
+  -
+    kind: "message-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:17 (message)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerId.cmake:64 (__determine_compiler_id_test)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCXXCompiler.cmake:126 (CMAKE_DETERMINE_COMPILER_ID)"
+      - "CMakeLists.txt:58 (PROJECT)"
+    message: |
+      Compiling the CXX compiler identification source file "CMakeCXXCompilerId.cpp" succeeded.
+      Compiler:  
+      Build flags: 
+      Id flags:  
+      
+      The output was:
+      0
+      MSBuild version 17.6.3+07e294721 for .NET Framework
+      Build started 06-01-2024 00:13:22.
+      
+      Project "C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\3.28.1\\CompilerIdCXX\\CompilerIdCXX.vcxproj" on node 1 (default targets).
+      PrepareForBuild:
+        Creating directory "Debug\\".
+        Creating directory "Debug\\CompilerIdCXX.tlog\\".
+      InitializeBuildStatus:
+        Creating "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+      ClCompile:
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\CL.exe /c /nologo /W0 /WX- /diagnostics:column /Od /D _MBCS /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"Debug\\\\" /Fd"Debug\\vc143.pdb" /external:W0 /Gd /TP /FC /errorReport:queue CMakeCXXCompilerId.cpp
+        CMakeCXXCompilerId.cpp
+      Link:
+        C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:".\\CompilerIdCXX.exe" /INCREMENTAL:NO /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /PDB:".\\CompilerIdCXX.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:".\\CompilerIdCXX.lib" /MACHINE:X64 Debug\\CMakeCXXCompilerId.obj
+        CompilerIdCXX.vcxproj -> C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\3.28.1\\CompilerIdCXX\\CompilerIdCXX.exe
+      PostBuildEvent:
+        for %%i in (cl.exe) do @echo CMAKE_CXX_COMPILER=%%~$PATH:i
+        :VCEnd
+        CMAKE_CXX_COMPILER=C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe
+      FinalizeBuildStatus:
+        Deleting file "Debug\\CompilerIdCXX.tlog\\unsuccessfulbuild".
+        Touching "Debug\\CompilerIdCXX.tlog\\CompilerIdCXX.lastbuildstate".
+      Done Building Project "C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\3.28.1\\CompilerIdCXX\\CompilerIdCXX.vcxproj" (default targets).
+      
+      Build succeeded.
+          0 Warning(s)
+          0 Error(s)
+      
+      Time Elapsed 00:00:00.65
+      
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.exe"
+      
+      Compilation of the CXX compiler identification source "CMakeCXXCompilerId.cpp" produced "CompilerIdCXX.vcxproj"
+      
+      The CXX compiler identification is MSVC, found in:
+        C:/Users/Asus/Engine/Dependecies/assimp/CMakeFiles/3.28.1/CompilerIdCXX/CompilerIdCXX.exe
+      
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeTestCCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:58 (PROJECT)"
+    checks:
+      - "Detecting C compiler ABI info"
+    directories:
+      source: "C:/Users/Asus/Engine/Dependecies/assimp/CMakeFiles/CMakeScratch/TryCompile-qhvqez"
+      binary: "C:/Users/Asus/Engine/Dependecies/assimp/CMakeFiles/CMakeScratch/TryCompile-qhvqez"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "CMAKE_C_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Asus/Engine/Dependecies/assimp/CMakeFiles/CMakeScratch/TryCompile-qhvqez'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_549d6.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.6.3+07e294721 for .NET Framework
+        Build started 06-01-2024 00:13:24.
+        
+        Project "C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-qhvqez\\cmTC_549d6.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_549d6.dir\\Debug\\".
+          Creating directory "C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-qhvqez\\Debug\\".
+          Creating directory "cmTC_549d6.dir\\Debug\\cmTC_549d6.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_549d6.dir\\Debug\\cmTC_549d6.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_549d6.dir\\Debug\\\\" /Fd"cmTC_549d6.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.28\\Modules\\CMakeCCompilerABI.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.36.32535 for x64
+          CMakeCCompilerABI.c
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_549d6.dir\\Debug\\\\" /Fd"cmTC_549d6.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.28\\Modules\\CMakeCCompilerABI.c"
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-qhvqez\\Debug\\cmTC_549d6.exe" /INCREMENTAL /ILK:"cmTC_549d6.dir\\Debug\\cmTC_549d6.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Asus/Engine/Dependecies/assimp/CMakeFiles/CMakeScratch/TryCompile-qhvqez/Debug/cmTC_549d6.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Asus/Engine/Dependecies/assimp/CMakeFiles/CMakeScratch/TryCompile-qhvqez/Debug/cmTC_549d6.lib" /MACHINE:X64  /machine:x64 cmTC_549d6.dir\\Debug\\CMakeCCompilerABI.obj
+          cmTC_549d6.vcxproj -> C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-qhvqez\\Debug\\cmTC_549d6.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_549d6.dir\\Debug\\cmTC_549d6.tlog\\unsuccessfulbuild".
+          Touching "cmTC_549d6.dir\\Debug\\cmTC_549d6.tlog\\cmTC_549d6.lastbuildstate".
+        Done Building Project "C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-qhvqez\\cmTC_549d6.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.61
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeDetermineCompilerABI.cmake:57 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CMakeTestCXXCompiler.cmake:26 (CMAKE_DETERMINE_COMPILER_ABI)"
+      - "CMakeLists.txt:58 (PROJECT)"
+    checks:
+      - "Detecting CXX compiler ABI info"
+    directories:
+      source: "C:/Users/Asus/Engine/Dependecies/assimp/CMakeFiles/CMakeScratch/TryCompile-e176kl"
+      binary: "C:/Users/Asus/Engine/Dependecies/assimp/CMakeFiles/CMakeScratch/TryCompile-e176kl"
+    cmakeVariables:
+      CMAKE_CXX_FLAGS: "/DWIN32 /D_WINDOWS /GR /EHsc"
+      CMAKE_CXX_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+    buildResult:
+      variable: "CMAKE_CXX_ABI_COMPILED"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Asus/Engine/Dependecies/assimp/CMakeFiles/CMakeScratch/TryCompile-e176kl'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_e9849.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.6.3+07e294721 for .NET Framework
+        Build started 06-01-2024 00:13:26.
+        
+        Project "C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-e176kl\\cmTC_e9849.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_e9849.dir\\Debug\\".
+          Creating directory "C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-e176kl\\Debug\\".
+          Creating directory "cmTC_e9849.dir\\Debug\\cmTC_e9849.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_e9849.dir\\Debug\\cmTC_e9849.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_e9849.dir\\Debug\\\\" /Fd"cmTC_e9849.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.28\\Modules\\CMakeCXXCompilerABI.cpp"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.36.32535 for x64
+          CMakeCXXCompilerABI.cpp
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /GR /Fo"cmTC_e9849.dir\\Debug\\\\" /Fd"cmTC_e9849.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TP /errorReport:queue "C:\\Program Files\\CMake\\share\\cmake-3.28\\Modules\\CMakeCXXCompilerABI.cpp"
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-e176kl\\Debug\\cmTC_e9849.exe" /INCREMENTAL /ILK:"cmTC_e9849.dir\\Debug\\cmTC_e9849.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Asus/Engine/Dependecies/assimp/CMakeFiles/CMakeScratch/TryCompile-e176kl/Debug/cmTC_e9849.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Asus/Engine/Dependecies/assimp/CMakeFiles/CMakeScratch/TryCompile-e176kl/Debug/cmTC_e9849.lib" /MACHINE:X64  /machine:x64 cmTC_e9849.dir\\Debug\\CMakeCXXCompilerABI.obj
+          cmTC_e9849.vcxproj -> C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-e176kl\\Debug\\cmTC_e9849.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_e9849.dir\\Debug\\cmTC_e9849.tlog\\unsuccessfulbuild".
+          Touching "cmTC_e9849.dir\\Debug\\cmTC_e9849.tlog\\cmTC_e9849.lastbuildstate".
+        Done Building Project "C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-e176kl\\cmTC_e9849.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.61
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CheckIncludeFile.cmake:90 (try_compile)"
+      - "contrib/zlib/CMakeLists.txt:35 (check_include_file)"
+    checks:
+      - "Looking for sys/types.h"
+    directories:
+      source: "C:/Users/Asus/Engine/Dependecies/assimp/CMakeFiles/CMakeScratch/TryCompile-bga678"
+      binary: "C:/Users/Asus/Engine/Dependecies/assimp/CMakeFiles/CMakeScratch/TryCompile-bga678"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "C:/Users/Asus/Engine/Dependecies/assimp/cmake-modules"
+    buildResult:
+      variable: "HAVE_SYS_TYPES_H"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Asus/Engine/Dependecies/assimp/CMakeFiles/CMakeScratch/TryCompile-bga678'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_a79d7.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.6.3+07e294721 for .NET Framework
+        Build started 06-01-2024 00:13:28.
+        
+        Project "C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-bga678\\cmTC_a79d7.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_a79d7.dir\\Debug\\".
+          Creating directory "C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-bga678\\Debug\\".
+          Creating directory "cmTC_a79d7.dir\\Debug\\cmTC_a79d7.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_a79d7.dir\\Debug\\cmTC_a79d7.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_a79d7.dir\\Debug\\\\" /Fd"cmTC_a79d7.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-bga678\\CheckIncludeFile.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.36.32535 for x64
+          CheckIncludeFile.c
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_a79d7.dir\\Debug\\\\" /Fd"cmTC_a79d7.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-bga678\\CheckIncludeFile.c"
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-bga678\\Debug\\cmTC_a79d7.exe" /INCREMENTAL /ILK:"cmTC_a79d7.dir\\Debug\\cmTC_a79d7.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Asus/Engine/Dependecies/assimp/CMakeFiles/CMakeScratch/TryCompile-bga678/Debug/cmTC_a79d7.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Asus/Engine/Dependecies/assimp/CMakeFiles/CMakeScratch/TryCompile-bga678/Debug/cmTC_a79d7.lib" /MACHINE:X64  /machine:x64 cmTC_a79d7.dir\\Debug\\CheckIncludeFile.obj
+          cmTC_a79d7.vcxproj -> C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-bga678\\Debug\\cmTC_a79d7.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_a79d7.dir\\Debug\\cmTC_a79d7.tlog\\unsuccessfulbuild".
+          Touching "cmTC_a79d7.dir\\Debug\\cmTC_a79d7.tlog\\cmTC_a79d7.lastbuildstate".
+        Done Building Project "C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-bga678\\cmTC_a79d7.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.60
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CheckIncludeFile.cmake:90 (try_compile)"
+      - "contrib/zlib/CMakeLists.txt:36 (check_include_file)"
+    checks:
+      - "Looking for stdint.h"
+    directories:
+      source: "C:/Users/Asus/Engine/Dependecies/assimp/CMakeFiles/CMakeScratch/TryCompile-lets16"
+      binary: "C:/Users/Asus/Engine/Dependecies/assimp/CMakeFiles/CMakeScratch/TryCompile-lets16"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "C:/Users/Asus/Engine/Dependecies/assimp/cmake-modules"
+    buildResult:
+      variable: "HAVE_STDINT_H"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Asus/Engine/Dependecies/assimp/CMakeFiles/CMakeScratch/TryCompile-lets16'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_63b74.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.6.3+07e294721 for .NET Framework
+        Build started 06-01-2024 00:13:29.
+        
+        Project "C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-lets16\\cmTC_63b74.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_63b74.dir\\Debug\\".
+          Creating directory "C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-lets16\\Debug\\".
+          Creating directory "cmTC_63b74.dir\\Debug\\cmTC_63b74.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_63b74.dir\\Debug\\cmTC_63b74.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_63b74.dir\\Debug\\\\" /Fd"cmTC_63b74.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-lets16\\CheckIncludeFile.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.36.32535 for x64
+          CheckIncludeFile.c
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_63b74.dir\\Debug\\\\" /Fd"cmTC_63b74.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-lets16\\CheckIncludeFile.c"
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-lets16\\Debug\\cmTC_63b74.exe" /INCREMENTAL /ILK:"cmTC_63b74.dir\\Debug\\cmTC_63b74.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Asus/Engine/Dependecies/assimp/CMakeFiles/CMakeScratch/TryCompile-lets16/Debug/cmTC_63b74.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Asus/Engine/Dependecies/assimp/CMakeFiles/CMakeScratch/TryCompile-lets16/Debug/cmTC_63b74.lib" /MACHINE:X64  /machine:x64 cmTC_63b74.dir\\Debug\\CheckIncludeFile.obj
+          cmTC_63b74.vcxproj -> C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-lets16\\Debug\\cmTC_63b74.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_63b74.dir\\Debug\\cmTC_63b74.tlog\\unsuccessfulbuild".
+          Touching "cmTC_63b74.dir\\Debug\\cmTC_63b74.tlog\\cmTC_63b74.lastbuildstate".
+        Done Building Project "C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-lets16\\cmTC_63b74.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.60
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CheckIncludeFile.cmake:90 (try_compile)"
+      - "contrib/zlib/CMakeLists.txt:37 (check_include_file)"
+    checks:
+      - "Looking for stddef.h"
+    directories:
+      source: "C:/Users/Asus/Engine/Dependecies/assimp/CMakeFiles/CMakeScratch/TryCompile-9jg1x3"
+      binary: "C:/Users/Asus/Engine/Dependecies/assimp/CMakeFiles/CMakeScratch/TryCompile-9jg1x3"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "C:/Users/Asus/Engine/Dependecies/assimp/cmake-modules"
+    buildResult:
+      variable: "HAVE_STDDEF_H"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Asus/Engine/Dependecies/assimp/CMakeFiles/CMakeScratch/TryCompile-9jg1x3'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_16b4c.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.6.3+07e294721 for .NET Framework
+        Build started 06-01-2024 00:13:30.
+        
+        Project "C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-9jg1x3\\cmTC_16b4c.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_16b4c.dir\\Debug\\".
+          Creating directory "C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-9jg1x3\\Debug\\".
+          Creating directory "cmTC_16b4c.dir\\Debug\\cmTC_16b4c.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_16b4c.dir\\Debug\\cmTC_16b4c.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_16b4c.dir\\Debug\\\\" /Fd"cmTC_16b4c.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-9jg1x3\\CheckIncludeFile.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.36.32535 for x64
+          CheckIncludeFile.c
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_16b4c.dir\\Debug\\\\" /Fd"cmTC_16b4c.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-9jg1x3\\CheckIncludeFile.c"
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-9jg1x3\\Debug\\cmTC_16b4c.exe" /INCREMENTAL /ILK:"cmTC_16b4c.dir\\Debug\\cmTC_16b4c.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Asus/Engine/Dependecies/assimp/CMakeFiles/CMakeScratch/TryCompile-9jg1x3/Debug/cmTC_16b4c.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Asus/Engine/Dependecies/assimp/CMakeFiles/CMakeScratch/TryCompile-9jg1x3/Debug/cmTC_16b4c.lib" /MACHINE:X64  /machine:x64 cmTC_16b4c.dir\\Debug\\CheckIncludeFile.obj
+          cmTC_16b4c.vcxproj -> C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-9jg1x3\\Debug\\cmTC_16b4c.exe
+        FinalizeBuildStatus:
+          Deleting file "cmTC_16b4c.dir\\Debug\\cmTC_16b4c.tlog\\unsuccessfulbuild".
+          Touching "cmTC_16b4c.dir\\Debug\\cmTC_16b4c.tlog\\cmTC_16b4c.lastbuildstate".
+        Done Building Project "C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-9jg1x3\\cmTC_16b4c.vcxproj" (default targets).
+        
+        Build succeeded.
+            0 Warning(s)
+            0 Error(s)
+        
+        Time Elapsed 00:00:00.60
+        
+      exitCode: 0
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CheckTypeSize.cmake:146 (try_compile)"
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CheckTypeSize.cmake:271 (__check_type_size_impl)"
+      - "contrib/zlib/CMakeLists.txt:55 (check_type_size)"
+    checks:
+      - "Check size of off64_t"
+    directories:
+      source: "C:/Users/Asus/Engine/Dependecies/assimp/CMakeFiles/CMakeScratch/TryCompile-e7jowt"
+      binary: "C:/Users/Asus/Engine/Dependecies/assimp/CMakeFiles/CMakeScratch/TryCompile-e7jowt"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "C:/Users/Asus/Engine/Dependecies/assimp/cmake-modules"
+    buildResult:
+      variable: "HAVE_OFF64_T"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Asus/Engine/Dependecies/assimp/CMakeFiles/CMakeScratch/TryCompile-e7jowt'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_208df.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.6.3+07e294721 for .NET Framework
+        Build started 06-01-2024 00:13:31.
+        
+        Project "C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-e7jowt\\cmTC_208df.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_208df.dir\\Debug\\".
+          Creating directory "C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-e7jowt\\Debug\\".
+          Creating directory "cmTC_208df.dir\\Debug\\cmTC_208df.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_208df.dir\\Debug\\cmTC_208df.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _LARGEFILE64_SOURCE=1 /D HAVE_SYS_TYPES_H /D HAVE_STDINT_H /D HAVE_STDDEF_H /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_208df.dir\\Debug\\\\" /Fd"cmTC_208df.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-e7jowt\\OFF64_T.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.36.32535 for x64
+          OFF64_T.c
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D _LARGEFILE64_SOURCE=1 /D HAVE_SYS_TYPES_H /D HAVE_STDINT_H /D HAVE_STDDEF_H /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_208df.dir\\Debug\\\\" /Fd"cmTC_208df.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-e7jowt\\OFF64_T.c"
+        C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-e7jowt\\OFF64_T.c(29,12): error C2065: 'off64_t': undeclared identifier [C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-e7jowt\\cmTC_208df.vcxproj]
+        C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-e7jowt\\OFF64_T.c(30,12): error C2065: 'off64_t': undeclared identifier [C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-e7jowt\\cmTC_208df.vcxproj]
+        C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-e7jowt\\OFF64_T.c(31,12): error C2065: 'off64_t': undeclared identifier [C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-e7jowt\\cmTC_208df.vcxproj]
+        C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-e7jowt\\OFF64_T.c(32,12): error C2065: 'off64_t': undeclared identifier [C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-e7jowt\\cmTC_208df.vcxproj]
+        C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-e7jowt\\OFF64_T.c(33,12): error C2065: 'off64_t': undeclared identifier [C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-e7jowt\\cmTC_208df.vcxproj]
+        Done Building Project "C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-e7jowt\\cmTC_208df.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-e7jowt\\cmTC_208df.vcxproj" (default target) (1) ->
+        (ClCompile target) -> 
+          C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-e7jowt\\OFF64_T.c(29,12): error C2065: 'off64_t': undeclared identifier [C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-e7jowt\\cmTC_208df.vcxproj]
+          C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-e7jowt\\OFF64_T.c(30,12): error C2065: 'off64_t': undeclared identifier [C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-e7jowt\\cmTC_208df.vcxproj]
+          C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-e7jowt\\OFF64_T.c(31,12): error C2065: 'off64_t': undeclared identifier [C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-e7jowt\\cmTC_208df.vcxproj]
+          C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-e7jowt\\OFF64_T.c(32,12): error C2065: 'off64_t': undeclared identifier [C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-e7jowt\\cmTC_208df.vcxproj]
+          C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-e7jowt\\OFF64_T.c(33,12): error C2065: 'off64_t': undeclared identifier [C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-e7jowt\\cmTC_208df.vcxproj]
+        
+            0 Warning(s)
+            5 Error(s)
+        
+        Time Elapsed 00:00:00.37
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CheckFunctionExists.cmake:86 (try_compile)"
+      - "contrib/zlib/CMakeLists.txt:64 (check_function_exists)"
+    checks:
+      - "Looking for fseeko"
+    directories:
+      source: "C:/Users/Asus/Engine/Dependecies/assimp/CMakeFiles/CMakeScratch/TryCompile-acjlwg"
+      binary: "C:/Users/Asus/Engine/Dependecies/assimp/CMakeFiles/CMakeScratch/TryCompile-acjlwg"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "C:/Users/Asus/Engine/Dependecies/assimp/cmake-modules"
+    buildResult:
+      variable: "HAVE_FSEEKO"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Asus/Engine/Dependecies/assimp/CMakeFiles/CMakeScratch/TryCompile-acjlwg'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_bfc7f.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.6.3+07e294721 for .NET Framework
+        Build started 06-01-2024 00:13:31.
+        
+        Project "C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-acjlwg\\cmTC_bfc7f.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_bfc7f.dir\\Debug\\".
+          Creating directory "C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-acjlwg\\Debug\\".
+          Creating directory "cmTC_bfc7f.dir\\Debug\\cmTC_bfc7f.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_bfc7f.dir\\Debug\\cmTC_bfc7f.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=fseeko /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_bfc7f.dir\\Debug\\\\" /Fd"cmTC_bfc7f.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-acjlwg\\CheckFunctionExists.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.36.32535 for x64
+          CheckFunctionExists.c
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D CHECK_FUNCTION_EXISTS=fseeko /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_bfc7f.dir\\Debug\\\\" /Fd"cmTC_bfc7f.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-acjlwg\\CheckFunctionExists.c"
+        Link:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\link.exe /ERRORREPORT:QUEUE /OUT:"C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-acjlwg\\Debug\\cmTC_bfc7f.exe" /INCREMENTAL /ILK:"cmTC_bfc7f.dir\\Debug\\cmTC_bfc7f.ilk" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib shell32.lib ole32.lib oleaut32.lib uuid.lib comdlg32.lib advapi32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG /PDB:"C:/Users/Asus/Engine/Dependecies/assimp/CMakeFiles/CMakeScratch/TryCompile-acjlwg/Debug/cmTC_bfc7f.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"C:/Users/Asus/Engine/Dependecies/assimp/CMakeFiles/CMakeScratch/TryCompile-acjlwg/Debug/cmTC_bfc7f.lib" /MACHINE:X64  /machine:x64 cmTC_bfc7f.dir\\Debug\\CheckFunctionExists.obj
+        CheckFunctionExists.obj : error LNK2019: unresolved external symbol fseeko referenced in function main [C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-acjlwg\\cmTC_bfc7f.vcxproj]
+        C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-acjlwg\\Debug\\cmTC_bfc7f.exe : fatal error LNK1120: 1 unresolved externals [C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-acjlwg\\cmTC_bfc7f.vcxproj]
+        Done Building Project "C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-acjlwg\\cmTC_bfc7f.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-acjlwg\\cmTC_bfc7f.vcxproj" (default target) (1) ->
+        (Link target) -> 
+          CheckFunctionExists.obj : error LNK2019: unresolved external symbol fseeko referenced in function main [C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-acjlwg\\cmTC_bfc7f.vcxproj]
+          C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-acjlwg\\Debug\\cmTC_bfc7f.exe : fatal error LNK1120: 1 unresolved externals [C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-acjlwg\\cmTC_bfc7f.vcxproj]
+        
+            0 Warning(s)
+            2 Error(s)
+        
+        Time Elapsed 00:00:00.54
+        
+      exitCode: 1
+  -
+    kind: "try_compile-v1"
+    backtrace:
+      - "C:/Program Files/CMake/share/cmake-3.28/Modules/CheckIncludeFile.cmake:90 (try_compile)"
+      - "contrib/zlib/CMakeLists.txt:72 (check_include_file)"
+    checks:
+      - "Looking for unistd.h"
+    directories:
+      source: "C:/Users/Asus/Engine/Dependecies/assimp/CMakeFiles/CMakeScratch/TryCompile-dy479h"
+      binary: "C:/Users/Asus/Engine/Dependecies/assimp/CMakeFiles/CMakeScratch/TryCompile-dy479h"
+    cmakeVariables:
+      CMAKE_C_FLAGS: "/DWIN32 /D_WINDOWS"
+      CMAKE_C_FLAGS_DEBUG: "/MDd /Zi /Ob0 /Od /RTC1"
+      CMAKE_EXE_LINKER_FLAGS: "/machine:x64"
+      CMAKE_MODULE_PATH: "C:/Users/Asus/Engine/Dependecies/assimp/cmake-modules"
+    buildResult:
+      variable: "Z_HAVE_UNISTD_H"
+      cached: true
+      stdout: |
+        Change Dir: 'C:/Users/Asus/Engine/Dependecies/assimp/CMakeFiles/CMakeScratch/TryCompile-dy479h'
+        
+        Run Build Command(s): "C:/Program Files/Microsoft Visual Studio/2022/Community/MSBuild/Current/Bin/amd64/MSBuild.exe" cmTC_9b2b5.vcxproj /p:Configuration=Debug /p:Platform=x64 /p:VisualStudioVersion=17.0 /v:n
+        MSBuild version 17.6.3+07e294721 for .NET Framework
+        Build started 06-01-2024 00:13:32.
+        
+        Project "C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-dy479h\\cmTC_9b2b5.vcxproj" on node 1 (default targets).
+        PrepareForBuild:
+          Creating directory "cmTC_9b2b5.dir\\Debug\\".
+          Creating directory "C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-dy479h\\Debug\\".
+          Creating directory "cmTC_9b2b5.dir\\Debug\\cmTC_9b2b5.tlog\\".
+        InitializeBuildStatus:
+          Creating "cmTC_9b2b5.dir\\Debug\\cmTC_9b2b5.tlog\\unsuccessfulbuild" because "AlwaysCreate" was specified.
+        ClCompile:
+          C:\\Program Files\\Microsoft Visual Studio\\2022\\Community\\VC\\Tools\\MSVC\\14.36.32532\\bin\\HostX64\\x64\\CL.exe /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_9b2b5.dir\\Debug\\\\" /Fd"cmTC_9b2b5.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-dy479h\\CheckIncludeFile.c"
+          Microsoft (R) C/C++ Optimizing Compiler Version 19.36.32535 for x64
+          CheckIncludeFile.c
+          Copyright (C) Microsoft Corporation.  All rights reserved.
+          cl /c /Zi /W1 /WX- /diagnostics:column /Od /Ob0 /D _MBCS /D WIN32 /D _WINDOWS /D "CMAKE_INTDIR=\\"Debug\\"" /Gm- /RTC1 /MDd /GS /fp:precise /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"cmTC_9b2b5.dir\\Debug\\\\" /Fd"cmTC_9b2b5.dir\\Debug\\vc143.pdb" /external:W1 /Gd /TC /errorReport:queue "C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-dy479h\\CheckIncludeFile.c"
+        C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-dy479h\\CheckIncludeFile.c(1,10): fatal  error C1083: Cannot open include file: 'unistd.h': No such file or directory [C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-dy479h\\cmTC_9b2b5.vcxproj]
+        Done Building Project "C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-dy479h\\cmTC_9b2b5.vcxproj" (default targets) -- FAILED.
+        
+        Build FAILED.
+        
+        "C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-dy479h\\cmTC_9b2b5.vcxproj" (default target) (1) ->
+        (ClCompile target) -> 
+          C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-dy479h\\CheckIncludeFile.c(1,10): fatal  error C1083: Cannot open include file: 'unistd.h': No such file or directory [C:\\Users\\Asus\\Engine\\Dependecies\\assimp\\CMakeFiles\\CMakeScratch\\TryCompile-dy479h\\cmTC_9b2b5.vcxproj]
+        
+            0 Warning(s)
+            1 Error(s)
+        
+        Time Elapsed 00:00:00.44
+        
+      exitCode: 1
+...
