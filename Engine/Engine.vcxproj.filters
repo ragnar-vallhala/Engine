@@ -51,6 +51,9 @@
     <ClCompile Include="src\LightSource.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="src\Mesh.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="src\Shaders\vertex.glsl" />
@@ -2458,6 +2461,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="include\assimp\ZipArchiveIOSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="include\Mesh.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

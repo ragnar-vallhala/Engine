@@ -170,6 +170,7 @@
     <ClCompile Include="src\Entity.cpp" />
     <ClCompile Include="src\Launch.cpp" />
     <ClCompile Include="src\LightSource.cpp" />
+    <ClCompile Include="src\Mesh.cpp" />
     <ClCompile Include="src\Renderer.cpp" />
     <ClCompile Include="src\shader.cpp" />
     <ClCompile Include="src\Application.cpp" />
@@ -698,6 +699,7 @@
     <ClInclude Include="include\glm\vector_relational.hpp" />
     <ClInclude Include="include\image.h" />
     <ClInclude Include="include\LightSource.h" />
+    <ClInclude Include="include\Mesh.h" />
     <ClInclude Include="include\Renderer.h" />
     <ClInclude Include="include\shader.h" />
     <ClInclude Include="include\EngineUtils.h" />

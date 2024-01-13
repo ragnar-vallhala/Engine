@@ -1,7 +1,5 @@
 #include "Renderer.h"
 
-
-
 unsigned int Renderer::_activeVAO = 0;
 
 

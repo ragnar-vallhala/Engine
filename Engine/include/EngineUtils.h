@@ -19,7 +19,6 @@
 
 
 #if 1
-//#define COLOR_OUT			//Logs color for the triangle
 #define TEST_LOG			//Logs the shader code read from files
 #define LOG(x) std::cout<<x<<std::endl;
 #define LOGL(x) std::cout<<x;
@@ -30,3 +29,17 @@
 
 
 void readFile(const char* path, std::string &str);
+
+
+struct Vertex {
+	glm::vec3 position;
+	glm::vec3 normal;
+	glm::vec2 uv;
+};
+
+struct Texture {
+	unsigned int ID;
+	std::string type;
+};
+
+
