@@ -54,14 +54,6 @@ void Launch::Run() {
         return;
     }
 
-    ImgData icon = ImageLoader::getImage("../Engine/Resources/nb.jpg");
-    if (icon.success) {
-        glfwSetWindowIcon(window, 1, (GLFWimage*)icon.data);
-    }
-    else {
-        std::cout << "Can't Load Image" << std::endl;
-    }
-
     glfwMakeContextCurrent(window);
 
     
