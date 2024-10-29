@@ -10,6 +10,7 @@ typedef struct imageData {
 	int height;
 	int nChannels;
 	unsigned char* data;
+  imageData(bool s, int w, int h, int c, unsigned char* d):success(s), width(w), height(h), nChannels(c), data(d){}
 }ImgData;
 
 class ImageLoader {
